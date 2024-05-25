@@ -21,7 +21,7 @@ Interactive Dashboard: Develop a user-friendly interface or dashboard to visuali
 ## TECH STACK USED 
 1. Flask
 2. jQuery
-3. Tailwind CSS
+3. CSS
 4. Javascript
 5. Tensorflow
 6. HTML
