@@ -1,0 +1,73 @@
+{% extends "layout.html" %} {% block body %}
+<section id="home">
+  <div class="main-container">
+    <div class="container">
+      <h2>Find Animal</h2>
+      <form
+        id="image-form"
+        method="POST"
+        action="/result"
+        enctype="multipart/form-data"
+      >
+        <div>
+          <label for="image-upload" class="label">Select an image:</label>
+          <input
+            type="file"
+            id="image-upload"
+            accept="image/*"
+            class="input"
+            name="image"
+          />
+        </div>
+        <div>
+          <button
+            type="button"
+            id="detect-button"
+            class="btn"
+            onclick="predict()"
+          >
+            Detect Disease
+          </button>
+        </div>
+      </form>
+      <div id="result" class="result"></div>
+      <div id="predict-loader"><p>Predicting ...</p></div>
+    </div>
+    <div class="container container1">
+      <h2 class="heading1">Analysis</h2>
+      <div class="inner-container">
+        <div class="uploaded-image">
+          <img
+            src="{{url_for('static', filename='images/no image.png')}}"
+            id="uploaded-image"
+          />
+        </div>
+        <div class="progress">
+          <svg
+            class="progress-circle"
+            width="200px"
+            height="200px"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              class="progress-circle-back"
+              cx="80"
+              cy="80"
+              r="74"
+            ></circle>
+            <circle
+              class="progress-circle-prog"
+              cx="80"
+              cy="80"
+              r="74"
+            ></circle>
+          </svg>
+          <div class="progress-text" data-progress="0">0%</div>
+          <div class="progress-title">Accuracy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

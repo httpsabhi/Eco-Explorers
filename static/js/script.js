@@ -35,3 +35,57 @@ var swiper = new Swiper(".gallery-slider", {
         },
     }
 })
+
+// Accuracy Bar
+function progressBar(progressVal, totalPercentageVal = 100) {
+    const strokeVal = (4.64 * 100) / totalPercentageVal;
+    $(".progress-circle-prog").css("stroke-dasharray", progressVal * strokeVal + " 999");
+    const el = $(".progress-text");
+    const from = el.data("progress");
+    el.data("progress", progressVal);
+    const start = new Date().getTime();
+  
+    setTimeout(function () {
+      const now = new Date().getTime() - start;
+      const progress = now / 700;
+      el.html((progressVal / totalPercentageVal) * 100 + "%");
+      if (progress < 1) setTimeout(arguments.callee, 10);
+    }, 10);
+  }
+  
+  // Display Result
+  function predict() {
+    const formData = new FormData($("#image-form")[0]);
+    // console.log(formData);
+    $("#result").html("");
+    $("#predict-loader").show();
+    $.ajax({
+      url: "/result",
+      type: "POST",
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function (response) {
+        $("#predict-loader").hide();
+        $("#result").html(response.result[0]);
+        // console.log(response);
+        progressBar(response.result[1].toFixed(2), 100);
+      },
+      error: function (xhr, status, error) {
+        $("#predict-loader").hide();
+        alert(
+          "An error occurred while processing the request. Please try again later."
+        );
+      },
+    });
+  }
+  
+  // Display Uploaded Image
+  let InputFile = document.getElementById("image-upload");
+  let ImageUpload = document.getElementById("uploaded-image");
+  
+  InputFile.addEventListener("change", function() {
+    if (this.files && this.files[0]) {
+      ImageUpload.src = URL.createObjectURL(this.files[0]);
+    }
+  });

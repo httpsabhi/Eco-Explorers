@@ -19,7 +19,7 @@ def MakePrediction(image_path, model, classes):
     category = classes[np.argmax(pred)]
     return category, max_element
 
-image_path = 'Data/classifier/cheetah/00000000_224resized.png'
-model = load_model('models/animal.keras')
-classes = ['cheetah', 'fox', 'hyena', 'lion', 'tiger', 'wolf']
-MakePrediction(image_path, model, classes)
+# image_path = 'D:/Hackathon/Hack4BioHeritage/Data/classifier/cheetah/00000000_224resized.png'
+# model = load_model('D:/Hackathon/Hack4BioHeritage/App/models/animal.keras')
+# classes = ['cheetah', 'fox', 'hyena', 'lion', 'tiger', 'wolf']
+# MakePrediction(image_path, model, classes)

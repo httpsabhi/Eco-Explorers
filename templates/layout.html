@@ -1,77 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoExplorer</title>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/dashboard.css')}}"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="/" class="logo"> <i class="fas fa-paw"></i> EcoExplorer</a>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PaudhRog</title>
-  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</head>
+      <nav class="navbar">
+        <a href="/">home</a>
+        <a href="#about">about</a>
+        <a href="#gallery">gallery</a>
+        <a href="#animal">animal</a>
+        <a href="#contact">contact</a>
+      </nav>
 
-<nav class="navbar">
-  <div class="weather-mobile">
-    <a href="https://httpsabhi.github.io/forecast/" target="_blank">
-      <img class="weather-icon-mobile" src="../static/img/loading.gif" alt="">
-      <p class="temp-mobile"></p>
-    </a>
-  </div>
-  <div class="logo"><a href="#">PaudhRog</a></div>
-  <ul class="nav-links">
-    <div class="menu">
-      <li><a href="#home">Home</a></li>
-    </div>
-    <div class="bx bx-menu" id="ham-menu"></div>
-  </ul>
-  <div class="weather">
-    <a href="https://httpsabhi.github.io/forecast/" target="_blank">
-      <img class="weather-icon" src="../static/img/loading.gif" alt="">
-      <p class="temp"></p>
-    </a>
-  </div>
-</nav>
+      <div class="icons">
+        <div id="login-btn" class="fas fa-user"></div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+      </div>
 
-{% block body %} {% endblock %}
-<footer class="footer">
-  <div class="waves">
-    <div class="wave" id="wave1"></div>
-    <div class="wave" id="wave2"></div>
-    <div class="wave" id="wave3"></div>
-    <div class="wave" id="wave4"></div>
-  </div>
-  <ul class="social-icon">
-    <li class="social-icon__item"><a class="social-icon__link"
-        href="https://www.facebook.com/profile.php?id=100085020009809" target="_blank">
-        <ion-icon name="logo-facebook"></ion-icon>
-      </a></li>
-    <li class="social-icon__item"><a class="social-icon__link" href="https://twitter.com/_A_bhi_" target="_blank">
-        <ion-icon name="logo-twitter"></ion-icon>
-      </a></li>
-    <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/abhay-kumar-69a1ab24a/"
-        target="_blank">
-        <ion-icon name="logo-linkedin"></ion-icon>
-      </a></li>
-    <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/_._abhayy._._/"
-        target="_blank">
-        <ion-icon name="logo-instagram"></ion-icon>
-      </a></li>
-  </ul>
-  <ul class="footer-menu">
-    <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-    <li class="menu__item"><a class="menu__link" href="https://ieeexplore.ieee.org/document/10205755"
-        target="_blank">Research</a></li>
-    <li class="menu__item"><a class="menu__link" href="#meet">Team</a></li>
-    <li class="menu__item"><a class="menu__link" href="#contact">Contact</a></li>
+      <!-- login form -->
 
-  </ul>
-  <p>&copy;2024 PaudhRog | All Rights Reserved</p>
-</footer>
-<script src="{{url_for('static', filename='index.js')}}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-</body>
+      <form action="" class="login-form">
+        <h3>login form</h3>
 
+        <input type="email" placeholder="Enter your email" class="box" />
+        <input type="password" placeholder="Enter your password" class="box" />
+        <div class="remember">
+          <input type="checkbox" name="" id="remember-me" />
+          <label for="remember-me">remember me</label>
+        </div>
+        <a href="#" class="btn">login</a>
+      </form>
+    </header>
+    {% block body %} {% endblock %}
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+  </body>
 </html>
