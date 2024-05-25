@@ -25,7 +25,8 @@ Interactive Dashboard: Develop a user-friendly interface or dashboard to visuali
 4. Javascript
 5. Tensorflow
 6. HTML
-
-
+   
+# LICENSE
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
 
