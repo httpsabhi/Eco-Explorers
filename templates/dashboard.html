@@ -26,7 +26,7 @@
             class="btn"
             onclick="predict()"
           >
-            Detect Disease
+            Predict
           </button>
         </div>
       </form>
@@ -67,6 +67,147 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+<section class="Conservation-Section">
+  <div class="container2">
+    <h1>Conservation Status</h1>
+    <form action="/conservation" method="POST" id="conservation-form">
+      <div class="inputBox">
+        <input
+          type="number"
+          id="height"
+          name="height"
+          step="0.01"
+          placeholder="Height (cm)"
+          required
+        />
+        <input
+          type="number"
+          id="weight"
+          name="weight"
+          step="0.01"
+          placeholder="Weight (Kgs)"
+          required
+        />
+      </div>
+      <div class="inputBox">
+        <input
+          type="number"
+          id="lifespan"
+          name="lifespan"
+          placeholder="Lifespan (years)"
+          required
+        />
+        <input
+          type="number"
+          id="average-speed"
+          name="averageSpeed"
+          step="0.01"
+          placeholder="Average Speed (km/h)"
+          required
+        />
+      </div>
+      <div class="inputBox">
+        <input
+          type="number"
+          id="gestation-period"
+          name="gestationPeriod"
+          placeholder="Gestation Period (days)"
+          required
+        />
+        <div class="dropdown-checkboxes">
+          <button type="button">Select Diet</button>
+          <div class="dropdown-checkboxes-content">
+            <label>
+              <input
+                type="checkbox"
+                id="diet-carnivore"
+                name="diet"
+                value="Carnivore"
+              />
+              Carnivore
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="diet-filter-feeder"
+                name="diet"
+                value="Filter Feeder"
+              />
+              Filter Feeder
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="diet-herbivore"
+                name="diet"
+                value="Herbivore"
+              />
+              Herbivore
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="diet-insectivore"
+                name="diet"
+                value="Insectivore"
+              />
+              Insectivore
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="diet-insects"
+                name="diet"
+                value="Insects"
+              />
+              Insects
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="diet-nectar"
+                name="diet"
+                value="Nectar"
+              />
+              Nectar
+            </label>
+            
+            <label>
+              <input
+                type="checkbox"
+                id="diet-omnivore"
+                name="diet"
+                value="Omnivore"
+              />
+              Omnivore
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="diet-piscivore"
+                name="diet"
+                value="Piscivore"
+              />
+              Piscivore
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                id="diet-scavenger"
+                name="diet"
+                value="Scavenger"
+              />
+              Scavenger
+            </label>
+          </div>
+        </div>
+      </div>
+      <button class="btn" type="button" onclick="Conservation()">Check Status</button>
+      <div id="conservation-result" class="result"></div>
+      <div id="conservation-loader"><p>Checking ...</p></div>
+    </form>
   </div>
 </section>
 

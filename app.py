@@ -3,7 +3,7 @@ from tensorflow.keras.models import load_model
 from predict import MakePrediction
 from flask_cors import CORS
 import os
-import tensorflow as tf
+from conservation import checkConservation
 
 app = Flask(__name__)
 CORS(app)
@@ -41,6 +41,22 @@ def result():
         return jsonify(result=result)
     else:
         return jsonify(result=("Server Error", 0))
+    
+@app.route("/conservation", methods=["POST"])
+def conservation():
+    if request.method == 'POST':
+        height = request.form.get('height')
+        weight = request.form.get('weight')
+        lifespan = request.form.get('lifespan')
+        average_speed = request.form.get('averageSpeed')
+        gestation_period = request.form.get('gestationPeriod')
+        diet = request.form.getlist('diet')
+
+        if height == '' or weight == '' or diet == '' or lifespan == '' or average_speed == '' or gestation_period == '':
+            result = ['No Value Found']
+        else:
+            result = checkConservation(height, weight, lifespan, average_speed, gestation_period, diet)
+        return jsonify({'status': result[0]})
 
 if __name__ == '__main__':
     app.run(debug=True)

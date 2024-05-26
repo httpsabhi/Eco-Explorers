@@ -60,7 +60,7 @@
 
 .result {
   margin-top: 20px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #ff6e01;
 }
@@ -71,7 +71,7 @@
 
 #predict-loader p {
   color: #ff6e01;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -98,8 +98,6 @@
   width: 150px;
   cursor: pointer;
   top: 50%;
-  /* left: 50%;
-    margin: -90px 0 0 -80px; */
 }
 
 .progress-circle {
@@ -160,6 +158,95 @@
   padding: 0.8rem 2rem;
   margin-top: 1rem;
 }
+
+.container2 {
+  background: var(--bg);
+  padding: 2rem 10%;
+  height: 50vh;
+}
+
+.container2 form {
+  text-align: center;
+}
+
+.container2 form .inputBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container2 form .inputBox input {
+  font-size: 1.7rem;
+  width: 49%;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  text-transform: none;
+}
+
+.dropdown-checkboxes {
+  width: 49%;
+  margin: 1rem 0;
+}
+
+.dropdown-checkboxes button {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+}
+
+.dropdown-checkboxes-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: calc(49% - 2rem); /* Adjust width for padding */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: 1rem;
+}
+
+.dropdown-checkboxes-content label {
+  display: block;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.dropdown-checkboxes-content input {
+  margin-right: 10px;
+}
+
+.dropdown-checkboxes button:focus + .dropdown-checkboxes-content,
+.dropdown-checkboxes-content:hover {
+  display: block;
+}
+
+#conservation-loader {
+  display: none;
+}
+
+#conservation-loader p {
+  color: #ff6e01;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.container2 h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333333;
+  text-align: center;
+}
+
+.Conservation-Section{
+  background-color: azure;
+}
+
 
 @keyframes showText {
   100% {
